@@ -39,6 +39,10 @@
   --g-spacing-6x-large: 6rem; /* 96px */
 }
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   padding: 0;
   margin: 0;

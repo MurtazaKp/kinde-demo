@@ -21,6 +21,12 @@ export default async function RootLayout({
   const user = await getUser();
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://widgets.kinde.com/v1/css/subscribe.css"
+        ></link>
+      </head>
       <body>
         <header>
           <nav className="nav container">
@@ -76,6 +82,10 @@ export default async function RootLayout({
             </small>
           </div>
         </footer>
+        <script
+          src="https://widgets.kinde.com/v1/js/subscribe.js"
+          async
+        ></script>
       </body>
     </html>
   );
