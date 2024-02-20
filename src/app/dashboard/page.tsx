@@ -1,37 +1,78 @@
+"use client";
 import Link from "next/link";
+import { client } from "../../../sanity/lib/client";
+import { useEffect, useState } from "react";
+import { urlForImage } from "../../../sanity/lib/image";
 
 export default function Dashboard() {
+  const [heroData, setHeroData] = useState<any>();
+  useEffect(() => {
+    async function getData() {
+      const query = `*[_type == "hero"]
+      
+      `;
+      const data = await client.fetch(query);
+
+      return data;
+    }
+
+    async function fetchHeroData() {
+      try {
+        const result = await getData();
+
+        setHeroData(result);
+
+        // const bannerImage = result[0]?.sections?.bannerImage;
+
+        // if (bannerImage) {
+        //   setHeroData((prevState) => ({
+        //     ...prevState,
+        //     bannerImage: {
+        //       src: urlForImage(bannerImage.src),
+        //     },
+        //   }));
+        // }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    }
+
+    fetchHeroData();
+  }, []);
+
+  const hero = heroData && heroData[0];
+  const image = heroData && urlForImage(heroData[0].image.src);
+
   return (
     <div>
       <section className="pt-12 pb-48 overflow-hidden bg-gray-900 sm:pb-80 sm:pt-16 lg:pt-20 xl:pt-24 xl:pb-96">
         <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
           <div className="max-w-xl mx-auto text-center">
             <h1 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl xl:text-7xl sm:tracking-tight">
-              Grow SaaS Fast
+              {hero && hero.title}
             </h1>
             <p className="mt-6 text-lg leading-7 text-white lg:leading-8 lg:text-xl">
-              Clarity gives you the blocks & components you need to create a
-              truly professional website.
+              {hero && hero.subtitle}
             </p>
             <div className="mt-8">
               <Link
-                href="/suscribe"
+                href={(hero && hero.ctaLink) || "/studio"}
                 title=""
                 className="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-full shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700"
                 role="button"
               >
-                Download Premium Assets
+                {hero && hero.ctaText}
               </Link>
             </div>
             <p className="mt-8 text-sm font-normal text-gray-400">
-              No credit card required • Cancel anytime
+              {hero && hero.note}
             </p>
           </div>
 
           <div className="relative mt-12 sm:mt-16 lg:mt-20">
             <img
               className="absolute top-auto w-full max-w-5xl mx-auto -mb-48 -translate-x-1/2 left-1/2"
-              src="https://landingfoliocom.imgix.net/store/collection/saasui/images/hero/2/video-mockup.svg"
+              src={image}
               alt=""
             />
 

@@ -25,12 +25,12 @@ export default function Home() {
                 </p>
                 <div className="mt-10">
                   <a
-                    href="#"
+                    href="/suscribe"
                     title=""
                     className="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700"
                     role="button"
                   >
-                    Book A Discovery Call
+                    Download Premium Assets
                   </a>
                 </div>
               </div>
