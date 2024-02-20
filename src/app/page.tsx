@@ -9,7 +9,7 @@ export default function Home() {
             <div className="flex flex-col justify-between lg:order-2">
               <div className="flex-1">
                 <span className="inline-flex items-center px-3 py-2 text-sm font-medium text-blue-600 rounded-xl bg-blue-50">
-                  #1 Email marketing tool in the market
+                  #1 Email marketing tool in the market and more
                 </span>
 
                 <h1 className="mt-6 text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl xl:text-7xl sm:tracking-tight">
