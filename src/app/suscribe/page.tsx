@@ -20,7 +20,7 @@ const Subscribe = () => {
             type="text"
             id="id__kui_p_0fb67a0e1d7d47c0b12ec7c0af02dd16"
             name="p_0fb67a0e1d7d47c0b12ec7c0af02dd16"
-            tabIndex="-1"
+            tabIndex={-1}
             value=""
           />
         </div>
