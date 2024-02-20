@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { client } from "../../../sanity/lib/client";
+import { client } from "../../../sanity/lib/client.js";
 import { useEffect, useState } from "react";
 import { urlForImage } from "../../../sanity/lib/image";
 
