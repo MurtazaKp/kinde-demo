@@ -20,7 +20,7 @@ export default function Dashboard() {
                 className="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-full shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700"
                 role="button"
               >
-                Get 14 Days Free Trial
+                Download Premium Assets
               </Link>
             </div>
             <p className="mt-8 text-sm font-normal text-gray-400">
