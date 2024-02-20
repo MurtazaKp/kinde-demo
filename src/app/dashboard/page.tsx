@@ -56,7 +56,7 @@ export default function Dashboard() {
             </p>
             <div className="mt-8">
               <Link
-                href={(hero && hero.ctaLink) || "/studio"}
+                href="#"
                 title=""
                 className="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-full shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700"
                 role="button"
