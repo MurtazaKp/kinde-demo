@@ -29,7 +29,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "sanity/lib/client.ts",
-    "sanity/lib/client.js"
+    "sanity/lib/client.js",
+    "src/pages/studio/[[...index]].jsx"
   ],
   "exclude": ["node_modules"]
 }
