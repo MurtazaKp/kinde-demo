@@ -39,7 +39,7 @@ const Subscribe = () => {
             </div>
             <fieldset>
               <legend>
-                <span className="kuiembed-heading">Stay in the loop</span>
+                <span className="kuiembed-heading">Stay Updated</span>
                 <span className="kuiembed-sub-heading">
                   Hear from us about product updates, news and events
                 </span>

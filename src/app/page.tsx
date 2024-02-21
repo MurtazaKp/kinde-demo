@@ -9,19 +9,20 @@ export default function Home() {
             <div className="flex flex-col justify-between lg:order-2">
               <div className="flex-1">
                 <span className="inline-flex items-center px-3 py-2 text-sm font-medium text-blue-600 rounded-xl bg-blue-50">
-                  #1 Email marketing tool in the market and more
+                  #1 Website to Download Premium Assets
                 </span>
 
-                <h1 className="mt-6 text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl xl:text-7xl sm:tracking-tight">
-                  The safest email in this earth.
+                <h1 className="mt-6 text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl xl:text-6xl sm:tracking-tight">
+                  Elevate Your Tech Stack with Exclusive SaaS Resources!
                 </h1>
               </div>
 
               <div className="mt-6 lg:mt-auto">
                 <p className="text-lg leading-7 text-gray-700 lg:leading-8 lg:text-xl">
-                  Clarity gives you the blocks & components you need to create a
-                  truly professional website, landing page or admin panel for
-                  SaaS.
+                  Discover top-tier SaaS assets to level up your tech game! From
+                  groundbreaking software to expert guides, access everything
+                  you need to thrive in the digital realm. Explore our exclusive
+                  collection today
                 </p>
                 <div className="mt-10">
                   <a

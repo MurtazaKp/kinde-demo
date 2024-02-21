@@ -29,8 +29,12 @@ export default async function RootLayout({
       </head>
       <body>
         <header>
-          <nav className="nav container">
-            <h1 className="text-display-3">KindeAuth</h1>
+          <nav className="nav container ">
+            <a href="/">
+              <h1 className="text-display-3">
+                <img className="w-32" src="/logo.svg" alt="logo" />
+              </h1>
+            </a>
             <div>
               {!(await isAuthenticated()) ? (
                 <>
@@ -68,17 +72,18 @@ export default async function RootLayout({
         </header>
         <main>{children}</main>
         <footer className="footer">
-          <div className="container">
-            <strong className="text-heading-2">KindeAuth</strong>
-            <p className="footer-tagline text-body-3">
-              Visit our{" "}
-              <Link className="link" href="https://kinde.com/docs">
-                help center
-              </Link>
-            </p>
+          <div className="container flex flex-col">
+            <strong className="text-heading-2">
+              <a
+                className="cursor-pointer text-blue-600 underline"
+                href="www.setoo.co"
+              >
+                www.setoo.co
+              </a>
+            </strong>
 
             <small className="text-subtle">
-              © 2023 KindeAuth, Inc. All rights reserved
+              © 2024 Setoo Solutions All rights reserved
             </small>
           </div>
         </footer>

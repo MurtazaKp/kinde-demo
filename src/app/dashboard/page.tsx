@@ -47,8 +47,8 @@ export default function Dashboard() {
     <div>
       <section className="pt-12 pb-48 overflow-hidden bg-gray-900 sm:pb-80 sm:pt-16 lg:pt-20 xl:pt-24 xl:pb-96">
         <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
-          <div className="max-w-xl mx-auto text-center">
-            <h1 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl xl:text-7xl sm:tracking-tight">
+          <div className="max-w-5xl mx-auto text-center">
+            <h1 className="text-3xl font-semibold tracking-tight text-white sm:text-5xl xl:text-6xl sm:tracking-tight">
               {hero && hero.title}
             </h1>
             <p className="mt-6 text-lg leading-7 text-white lg:leading-8 lg:text-xl">
