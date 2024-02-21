@@ -6,6 +6,22 @@ const Subscribe = () => {
   const [isSuccess, setIsSuccess] = useState(false);
 
   const handleSubmit = (event: any) => {
+    event.preventDefault(); // Prevent the default form submission
+
+    const form = event.target;
+    const formData = new FormData(form);
+
+    // Check if required fields are empty
+    const firstName = formData.get("new_name");
+    const email = formData.get("new_email");
+
+    if (!firstName || !email) {
+      // If any required field is empty, don't submit the form
+      alert("Please fill in all required fields.");
+      return;
+    }
+
+    // If all required fields are filled, proceed with form submission
     setTimeout(() => {
       setIsSuccess(!isSuccess);
     }, 2000);

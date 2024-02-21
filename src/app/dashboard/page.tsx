@@ -21,17 +21,6 @@ export default function Dashboard() {
         const result = await getData();
 
         setHeroData(result);
-
-        // const bannerImage = result[0]?.sections?.bannerImage;
-
-        // if (bannerImage) {
-        //   setHeroData((prevState) => ({
-        //     ...prevState,
-        //     bannerImage: {
-        //       src: urlForImage(bannerImage.src),
-        //     },
-        //   }));
-        // }
       } catch (error) {
         console.error("Error fetching data:", error);
       }
