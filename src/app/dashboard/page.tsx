@@ -3,9 +3,11 @@ import Link from "next/link";
 import { client } from "../../../sanity/lib/client.js";
 import { useEffect, useState } from "react";
 import { urlForImage } from "../../../sanity/lib/image";
+import Product from "@/components/products/page.tsx";
 
 export default function Dashboard() {
   const [heroData, setHeroData] = useState<any>();
+  const [productData, setProductData] = useState<any>();
   useEffect(() => {
     async function getData() {
       const query = `*[_type == "hero"]
@@ -27,7 +29,30 @@ export default function Dashboard() {
     }
 
     fetchHeroData();
+
+    async function getProductData() {
+      const query = `*[_type == "product"]
+      
+      `;
+      const data = await client.fetch(query);
+
+      return data;
+    }
+
+    async function fetchProductData() {
+      try {
+        const result = await getProductData();
+
+        setProductData(result);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    }
+
+    fetchProductData();
   }, []);
+
+  console.log(productData, "hereeeeeeeeeeeeeeee");
 
   const hero = heroData && heroData[0];
   const image = heroData && urlForImage(heroData[0].image.src);
@@ -90,6 +115,7 @@ export default function Dashboard() {
           </div>
         </div>
       </section>
+      <Product data={productData} />
     </div>
   );
 }
