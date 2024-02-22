@@ -139,7 +139,8 @@ const Product = ({ data }: any) => {
                     </div>
                   </div>
                   <div className="absolute inset-x-0 bottom-0 transition-all duration-200 translate-y-full group-hover:translate-y-0">
-                    <button
+                    <a
+                      href={data.store?.slug.current}
                       type="button"
                       className="flex items-center justify-center w-full px-4 py-2.5 text-sm font-bold text-white transition-all duration-200 bg-gray-900"
                     >
@@ -158,7 +159,7 @@ const Product = ({ data }: any) => {
                         />
                       </svg>
                       Add to cart
-                    </button>
+                    </a>
                   </div>
                 </div>
               );
