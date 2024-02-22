@@ -3,7 +3,7 @@ import Link from "next/link";
 import { client } from "../../../sanity/lib/client.js";
 import { useEffect, useState } from "react";
 import { urlForImage } from "../../../sanity/lib/image";
-import Product from "@/components/products/page.tsx";
+import Product from "@/components/products/page";
 
 export default function Dashboard() {
   const [heroData, setHeroData] = useState<any>();
