@@ -24,6 +24,14 @@ const Download = () => {
                 </svg>
                 Download
               </a>
+              <a
+                href="/dashboard"
+                title=""
+                className="inline-flex items-center justify-center w-full px-8 py-4 text-base font-semibold text-black transition-all duration-200 bg-transparent border border-black rounded-md sm:w-auto hover:bg-black hover:text-white focus:bg-black focus:text-white"
+                role="button"
+              >
+                Dashboard
+              </a>
             </div>
           </div>
         </div>
