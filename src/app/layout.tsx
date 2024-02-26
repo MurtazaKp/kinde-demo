@@ -72,7 +72,7 @@ export default async function RootLayout({
         </header>
         <main>{children}</main>
         <footer className="footer">
-          <div className="container flex flex-col">
+          <div className="container flex flex-col text-center">
             <strong className="text-heading-2">
               <a
                 className="cursor-pointer text-blue-600 underline"
