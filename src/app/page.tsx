@@ -3,8 +3,11 @@ import {
   RegisterLink,
   LoginLink,
 } from "@kinde-oss/kinde-auth-nextjs/components";
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 
-export default function Home() {
+export default async function Home() {
+  const { isAuthenticated, getUser } = getKindeServerSession();
+  const user = await getUser();
   return (
     <div>
       <section className="py-12 bg-white sm:py-16 lg:py-20 xl:py-24">
@@ -28,19 +31,33 @@ export default function Home() {
                   you need to thrive in the digital realm. Explore our exclusive
                   collection today
                 </p>
-                <div className="mt-10">
-                  <RegisterLink
-                    authUrlParams={{
-                      connection_id: "conn_7cfefd2f49844de68f5891605b438957",
-                    }}
-                    // href="/suscribe"
-                    title=""
-                    className="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700"
-                    role="button"
-                  >
-                    Download Premium Assets
-                  </RegisterLink>
-                </div>
+                {!(await isAuthenticated()) ? (
+                  <>
+                    <div className="mt-10">
+                      <RegisterLink
+                        authUrlParams={{
+                          connection_id:
+                            "conn_7cfefd2f49844de68f5891605b438957",
+                        }}
+                        // href="/suscribe"
+                        title=""
+                        className="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700"
+                        role="button"
+                      >
+                        Download Premium Assets
+                      </RegisterLink>
+                    </div>
+                  </>
+                ) : (
+                  <div className="mt-10">
+                    <Link
+                      className="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700"
+                      href={"/download"}
+                    >
+                      Download Premium Assets
+                    </Link>
+                  </div>
+                )}
               </div>
             </div>
 
