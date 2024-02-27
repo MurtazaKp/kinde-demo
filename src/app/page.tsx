@@ -31,33 +31,28 @@ export default async function Home() {
                   you need to thrive in the digital realm. Explore our exclusive
                   collection today
                 </p>
-                {!(await isAuthenticated()) ? (
-                  <>
-                    <div className="mt-10">
-                      <RegisterLink
-                        authUrlParams={{
-                          connection_id:
-                            "conn_7cfefd2f49844de68f5891605b438957",
-                        }}
-                        // href="/suscribe"
-                        title=""
-                        className="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700"
-                        role="button"
-                      >
-                        Download Premium Assets
-                      </RegisterLink>
-                    </div>
-                  </>
-                ) : (
-                  <div className="mt-10">
+
+                <div className="mt-10">
+                  {!isAuthenticated ? (
                     <Link
+                      href="/auth"
+                      title=""
                       className="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700"
-                      href={"/download"}
+                      role="button"
                     >
                       Download Premium Assets
                     </Link>
-                  </div>
-                )}
+                  ) : (
+                    <Link
+                      href="/download"
+                      title=""
+                      className="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700"
+                      role="button"
+                    >
+                      Download Premium Assets
+                    </Link>
+                  )}
+                </div>
               </div>
             </div>
 

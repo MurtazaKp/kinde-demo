@@ -1,6 +1,6 @@
 import React from "react";
 
-const Download = () => {
+export default async function Download() {
   return (
     <div>
       <section className="py-10 bg-gray-100 sm:py-16 lg:py-24">
@@ -38,6 +38,4 @@ const Download = () => {
       </section>
     </div>
   );
-};
-
-export default Download;
+}
