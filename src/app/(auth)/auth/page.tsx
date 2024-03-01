@@ -7,12 +7,12 @@ import X from "../icon/x";
 
 const AuthPage = () => {
   return (
-    <div className=" flex justify-center ">
+    <div className=" flex justify-center h-[calc(100vh_-_220px)] mx-auto ">
       <div className="flex justify-center flex-col gap-1 items-center w-full">
         <h2 className="text-lg">
-          <Link href="/">
+          {/* <Link href="/">
             <Logo />
-          </Link>
+          </Link> */}
         </h2>
         <p className="text-2xl w-4/12">
           Great You are just one step away from accessing premium assets !
