@@ -4,7 +4,8 @@ import { client } from "../../../sanity/lib/client.js";
 import { useEffect, useState } from "react";
 import { urlForImage } from "../../../sanity/lib/image";
 import Product from "@/components/products/page";
-
+import Calender from "@/components/calendar/page";
+import Contact from "@/components/contact/page"
 export default function Dashboard() {
   const [heroData, setHeroData] = useState<any>();
   const [productData, setProductData] = useState<any>();
@@ -51,8 +52,6 @@ export default function Dashboard() {
 
     fetchProductData();
   }, []);
-
-  console.log(productData, "hereeeeeeeeeeeeeeee");
 
   const hero = heroData && heroData[0];
   const image = heroData && urlForImage(heroData[0].image.src);
@@ -116,6 +115,12 @@ export default function Dashboard() {
         </div>
       </section>
       <Product data={productData} />
+      <div>
+        <Calender />
+      </div>
+      <div>
+       {/* <Contact/> */}
+      </div>
     </div>
   );
 }
